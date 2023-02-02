@@ -1,11 +1,11 @@
-// TODO: Include packages needed for this application
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 const markdown = require('./utils/generateMarkdown.js');
 
 const readmeFilePath = './output/README.md';
 
-// TODO: Create an array of questions for user input
+// Create an array of questions for user input
 const questions = [
     "What is the title of your project?: ",
     "What is the description?: ",
@@ -18,7 +18,7 @@ const questions = [
     "What is your email address?: ",
 ];
 
-// TODO: Create a function to write README file
+// Create a function to write README file
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
         if (err) {
@@ -29,7 +29,7 @@ function writeToFile(fileName, data) {
     });
 }
 
-// TODO: Create a function to initialize app
+// Create a function to initialize app
 function init() {
     inquirer
     .prompt([
@@ -68,6 +68,7 @@ function init() {
             message: questions[6],
             name: 'license',
             choices: [
+                "None",
                 "MIT License",
                 "Apache License 2.0",
                 "GNU General Public License v3.0",

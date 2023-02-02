@@ -1,46 +1,61 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// Create a function that returns a license badge based on which license is passed in
 function renderLicenseBadge(license) {
+
+  let badge;
+
   switch(license){
-    case "MIT":
+    case 'MIT License':
+      badge = '![MIT](https://img.shields.io/badge/license-MIT-informational)'
       break;
-    case "Apache":
+    case 'Apache License 2.0':
+      badge = '![Apache](https://img.shields.io/badge/license-Apache-informational)'
       break;
-    case "GNU":
+    case 'GNU General Public License v3.0':
+      badge = '![GNU](https://img.shields.io/badge/license-GNU-informational)'
       break;
+    default:
+      badge = '';
   }
+
+  return badge;
+
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-function renderLicenseLink(license) {
-  switch(license){
-    case "MIT":
-      break;
-    case "Apache":
-      break;
-    case "GNU":
-      break;
-  }
-}
-
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// Create a function that returns the license link
 function renderLicenseSection(license) {
+
+  let link;
+  
   switch(license){
-    case "MIT":
+    case 'MIT License':
+      link = '[MIT License](https://mit-license.org/)'
       break;
-    case "Apache":
+    case 'Apache License 2.0':
+      link = '[Apache License 2.0](https://www.apache.org/licenses/LICENSE-2.0.txt)'
       break;
-    case "GNU":
+    case 'GNU General Public License v3.0':
+      link = '[GNU General Public License v3.0](https://www.gnu.org/licenses/gpl-3.0.txt)'
       break;
+    default:
+      link = '';
   }
+
+  if (link === ''){
+    return 'The application has no license.';
+  }else{
+    return `This application is licenced by ${link}`;
+  }
+  
 }
 
-// TODO: Create a function to generate markdown for README
+// Create a function to generate markdown for README
 function generateMarkdown(data) {
+
+  const badge = renderLicenseBadge(data.license);
+  const licenseSection = renderLicenseSection(data.license);
+
   return `# ${data.title}
-  {license badge}
+  ${badge}
   ## Description
   ${data.description}
   ## Table of Contents
@@ -59,11 +74,12 @@ function generateMarkdown(data) {
   ## Tests
   ${data.testing}
   ## License
-  This application is licensed under ${data.license}.
+  ${licenseSection}
   ## Questions
-  This application was created by ${data.gitHubUser}.
-  If you have any questions they can be reached at ${data.email}.
-`;
+  This application was created by [${data.gitHubUser}](https://github.com/${data.gitHubUser}). <br>
+  If you have any questions, they can be reached at ${data.email}.
+  `;
+
 }
 
 module.exports = { generateMarkdown };
