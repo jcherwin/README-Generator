@@ -34,3 +34,5 @@ Then your finished README file will be located in the 'output' folder.
 
 <br>
 Here is a video demonstrating how the program should run:
+
+https://raw.githubusercontent.com/jcherwin/README-Generator/main/assets/video/demo.mp4
