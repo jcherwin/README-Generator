@@ -2,7 +2,7 @@
 
 ## Description
 
-The purpose of this program is to provide a simple way for anyone to produce a professional grade README file for their own projects. Just be answering a list of prompted questions, they can have a quick way of generating a README that will be of a repeatable level of quality. 
+The purpose of this program is to provide a simple way for anyone to produce a professional grade README file for their own projects. Just by answering a list of prompted questions, they can have a quick way of generating a README that will be of a repeatable level of quality. 
 
 This program utilizes node.js as well as the npm packages 'fs' to write to the outputted README, and 'inquirer' to prompt questions to the user and pass the answers onto 'fs' to write out to the file.
 
@@ -24,13 +24,13 @@ After installation, you can run the program by typing:
 node index.js
 ```
 
-This will bring up a series of prompts, that after you have finished answering, will bring up the message:
+This will bring up a series of prompts, that after you have finished answering, will bring up the following message:
 
 ```md
 Success: README File Generated!
 ```
 
-Then your finished README file will be located in the 'output' folder.
+The finished README file will then be located in the 'output' folder.
 
 <br>
 Here is a video demonstrating how the program should run:
